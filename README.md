@@ -16,6 +16,6 @@ Here is an example of using the library:
    b[1] = 2;  
    auto c = ev::unit(a);  
    auto d = ev::unit(b);  
-   REQUIRE(c == d);  
+   /* c == d */
 }  
 ```
