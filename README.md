@@ -1,7 +1,9 @@
 # Euclidean-vector-CPP
-Some of my code for an Euclidean Vector library I implemented using C++.
+My code for an Euclidean Vector library I implemented using C++ for an assignment in uni.
 
-The interface is provided in include/euclidean_vector.hpp.
+I have also uploaded a sample of some of my unit testing with Catch2, a testing framework for C++.
+
+The interface for the library is provided in include/euclidean_vector.hpp.
 
 Here is an example of using the library:
 
