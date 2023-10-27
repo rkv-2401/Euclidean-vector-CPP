@@ -2,8 +2,8 @@ TEST_CASE("Operator Overloading Tests") {
 	// Copy Assignment - done
 	auto init_list = {2.0, 0.0, 5.0, 6.2, 7.0, 8.4};
 	auto dummy_list = {3, 5, 7};
-	auto orig_vector = comp6771::euclidean_vector(init_list);
-	auto copy_asmt = comp6771::euclidean_vector(dummy_list);
+	auto orig_vector = ev::euclidean_vector(init_list);
+	auto copy_asmt = ev::euclidean_vector(dummy_list);
 	auto copy_asmt = orig_vector;
 	CHECK(copy_asmt.dimensions() == 6);
 	CHECK(copy_asmt_vec.get_mag() == orig_vector.get_mag());
@@ -17,7 +17,7 @@ TEST_CASE("Operator Overloading Tests") {
 	CHECK_NOTHROW(move_asmt2 = std::move(copy_asmt_vec));
 	
 	//Subscript operator
-	auto orig_vector_2 = comp6771::euclidean_vector(4, 8.5);
+	auto orig_vector_2 = ev::euclidean_vector(4, 8.5);
 	CHECK(orig_vector_2[2] == 8.5);
 	orig_vector_2[2] = 0.0;
 	CHECK(orig_vector_2[2] == 0.0);
@@ -38,8 +38,8 @@ TEST_CASE("Operator Overloading Tests") {
 	adding_check.push_back(12.0);
 	adding_check.push_back(12.0);
 	adding_check.push_back(12.0);
-	auto add_vec_1 = comp6771::euclidean_vector(3, 2.0);
-	auto add_vec_2 = comp6771::euclidean_vector(3, 10.0);
+	auto add_vec_1 = ev::euclidean_vector(3, 2.0);
+	auto add_vec_2 = ev::euclidean_vector(3, 10.0);
 	add_vec_1 += add_vec_2;
 	CHECK(add_vec_1.get_dim() == add_vec_2.get_dim());
 	CHECK(add_vec_1.get_mag() == check_add_vec);
@@ -50,8 +50,8 @@ TEST_CASE("Operator Overloading Tests") {
 	sub_check.push_back(12.0);
 	sub_check.push_back(12.0);
 	sub_check.push_back(12.0);
-	auto sub_vec_1 = comp6771::euclidean_vector(3, 20.0);
-	auto sub_vec_2 = comp6771::euclidean_vector(3, 8.0);
+	auto sub_vec_1 = ev::euclidean_vector(3, 20.0);
+	auto sub_vec_2 = ev::euclidean_vector(3, 8.0);
 	sub_vec_1 -= sub_vec_2;
 	CHECK(sub_vec_1.get_dim() == sub_vec_2.get_dim());
 	CHECK(sub_vec_1.get_mag() == check_sub_vec);
@@ -62,7 +62,7 @@ TEST_CASE("Operator Overloading Tests") {
 	check_multi_vec.push_back(12.0);
 	check_multi_vec.push_back(12.0);
 	check_multi_vec.push_back(12.0);
-	auto multi_vector = comp6771::euclidean_vector(3, 4.0);
+	auto multi_vector = ev::euclidean_vector(3, 4.0);
 	multi_vector *= 3.0;
 	CHECK(multi_vector.get_dim() == 3);
 	CHECK(multi_vector.get_mag() == check_multi_vec);
@@ -72,7 +72,7 @@ TEST_CASE("Operator Overloading Tests") {
 	check_div_vec.push_back(4.0);
 	check_div_vec.push_back(4.0);
 	check_div_vec.push_back(4.0);
-	auto div_vector = comp6771::euclidean_vector(3, 12.0);
+	auto div_vector = ev::euclidean_vector(3, 12.0);
 	div_vector /= 4.0;
 	CHECK(multi_vector.get_dim() == 3);
 	CHECK(multi_vector.get_mag() == check_div_vec);
@@ -80,21 +80,21 @@ TEST_CASE("Operator Overloading Tests") {
 
 
 	//Vector conversion
-	auto conv_vec = static_cast<std::vector<double>>(comp6771::euclidean_vector(4, 8.5));
+	auto conv_vec = static_cast<std::vector<double>>(ev::euclidean_vector(4, 8.5));
 	auto verified_vec = std::vector<double>();
 	vector_check.push_back(8.5);
 	vector_check.push_back(8.5);
 	vector_check.push_back(8.5);
 	CHECK(conv_vec == verified_vec);
-	CHECK_NOTHROW(static_cast<std::vector<double>>(comp6771::euclidean_vector(4, 8.5)));
+	CHECK_NOTHROW(static_cast<std::vector<double>>(ev::euclidean_vector(4, 8.5)));
 
 	//List conversion
-	auto conv_list = static_cast<std::list<double>>(comp6771::euclidean_vector(4, 8.5));
+	auto conv_list = static_cast<std::list<double>>(ev::euclidean_vector(4, 8.5));
 	auto verified_list= std::list<double>();
 	verified_list.push_back(8.5);
 	verified_list.push_back(8.5);
 	verified_list.push_back(8.5);
 	verified_list.push_back(8.5);
 	CHECK(conv_list == verified_list);
-	CHECK_NOTHROW(static_cast<std::list<double>>(comp6771::euclidean_vector(4, 8.5)));
+	CHECK_NOTHROW(static_cast<std::list<double>>(ev::euclidean_vector(4, 8.5)));
 	
