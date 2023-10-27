@@ -13,7 +13,6 @@ TEST_CASE("Creation of unit vectors") {
     auto b = comp6771::euclidean_vector(2);
     b[0] = 1;
     b[1] = 2;
-
     auto c = comp6771::unit(a);
     auto d = comp6771::unit(b);
     REQUIRE(c == d);
