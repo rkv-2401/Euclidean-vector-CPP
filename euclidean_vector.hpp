@@ -1,5 +1,5 @@
-#ifndef COMP6771_EUCLIDEAN_VECTOR_HPP
-#define COMP6771_EUCLIDEAN_VECTOR_HPP
+#ifndef EUCLIDEAN_VECTOR_HPP
+#define EUCLIDEAN_VECTOR_HPP
 
 #include <cmath>
 #include <list>
@@ -10,7 +10,7 @@
 #include <utility>
 #include <vector>
 
-namespace comp6771 {
+namespace ev {
 	class euclidean_vector_error : public std::runtime_error {
 	public:
 		explicit euclidean_vector_error(std::string const& what)
@@ -75,6 +75,6 @@ namespace comp6771 {
 	auto euclidean_norm(euclidean_vector const&) -> double;
 	auto unit(euclidean_vector const&) -> euclidean_vector;
 	auto dot(euclidean_vector const&, euclidean_vector const&) -> double;
-} // namespace comp6771
-// namespace comp6771
-#endif // COMP6771_EUCLIDEAN_VECTOR_HPP
+} // namespace ev
+// namespace ev
+#endif // ev_EUCLIDEAN_VECTOR_HPP
