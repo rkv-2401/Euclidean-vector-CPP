@@ -8,16 +8,14 @@ The interface for the library is provided in include/euclidean_vector.hpp.
 Here is an example of using the library:
 ```
  {  
-  &ensp; 
-  &ensp; &ensp; auto a = comp6771::euclidean_vector(2);  
-  &ensp; &ensp; a[0] = 1;  
-  &ensp; &ensp; a[1] = 2;  
-  &ensp; &ensp;  auto b = comp6771::euclidean_vector(2);  
-  &ensp; &ensp;  b[0] = 1;  
-  &ensp; &ensp;  b[1] = 2;  
-  &ensp; &ensp;  auto c = comp6771::unit(a);  
-  &ensp; &ensp;  auto d = comp6771::unit(b);  
-  &ensp; &ensp;  REQUIRE(c == d);  
-  &ensp; 
+   auto a = comp6771::euclidean_vector(2);  
+   a[0] = 1;  
+   a[1] = 2;  
+   auto b = comp6771::euclidean_vector(2);  
+   b[0] = 1;  
+   b[1] = 2;  
+   auto c = comp6771::unit(a);  
+   auto d = comp6771::unit(b);  
+   REQUIRE(c == d);  
 }  
 ```
